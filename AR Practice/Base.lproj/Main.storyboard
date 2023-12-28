@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AR_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zux-Ph-0Io">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                            </arView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State Tracking Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Mz-Gb-yxi">
+                                <rect key="frame" x="30" y="89" width="155.33333333333334" height="20.333333333333329"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qnn-iL-c8g">
+                                <rect key="frame" x="145.66666666666666" y="416" width="101.66666666666666" height="20.333333333333314"/>
+                                <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJd-WF-eBg">
+                                <rect key="frame" x="157" y="733" width="79" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Restart"/>
+                                <connections>
+                                    <action selector="restartBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bzq-46-U42"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AJd-WF-eBg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CiZ-58-Khv"/>
+                            <constraint firstItem="Zux-Ph-0Io" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GST-qs-oTd"/>
+                            <constraint firstItem="qnn-iL-c8g" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JsY-O7-uen"/>
+                            <constraint firstItem="7Mz-Gb-yxi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="LzW-xX-lAl"/>
+                            <constraint firstAttribute="bottom" secondItem="Zux-Ph-0Io" secondAttribute="bottom" id="TV0-ug-xhb"/>
+                            <constraint firstItem="Zux-Ph-0Io" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bGY-lN-UYR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AJd-WF-eBg" secondAttribute="bottom" constant="50" id="bT2-3V-Wyl"/>
+                            <constraint firstItem="qnn-iL-c8g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hqf-a6-JUa"/>
+                            <constraint firstItem="Zux-Ph-0Io" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="p41-hj-Vyh"/>
+                            <constraint firstItem="7Mz-Gb-yxi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="uBg-0b-s2D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="Zux-Ph-0Io" id="7c8-Bc-dxi"/>
+                        <outlet property="restartBtn" destination="AJd-WF-eBg" id="8zh-o3-Dtk"/>
+                        <outlet property="toastLbl" destination="qnn-iL-c8g" id="avU-KG-bR5"/>
+                        <outlet property="trackingLbl" destination="7Mz-Gb-yxi" id="SR9-1C-Fpp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IQK-pP-6V8">
+            <objects>
+                <viewController id="HrT-N8-lQ6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Otx-85-mLN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error. Could not use geo tracking." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhy-jZ-ZWR">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Vd4-Kz-7Kb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vhy-jZ-ZWR" firstAttribute="leading" secondItem="Vd4-Kz-7Kb" secondAttribute="leading" id="QFD-gO-768"/>
+                            <constraint firstItem="Vd4-Kz-7Kb" firstAttribute="bottom" secondItem="Vhy-jZ-ZWR" secondAttribute="bottom" id="Z2Q-aL-f2p"/>
+                            <constraint firstItem="Vhy-jZ-ZWR" firstAttribute="top" secondItem="Vd4-Kz-7Kb" secondAttribute="top" id="lf5-WO-AgK"/>
+                            <constraint firstItem="Vd4-Kz-7Kb" firstAttribute="trailing" secondItem="Vhy-jZ-ZWR" secondAttribute="trailing" id="oSt-sS-lxA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HRr-rZ-o68" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1104.5801526717557" y="22.535211267605636"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
