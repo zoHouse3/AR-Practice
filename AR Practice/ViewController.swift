@@ -53,6 +53,14 @@ class ViewController: UIViewController {
         arView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapOnARView(_:))))
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Start listening for location updates from Core Location
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
     func addGeoAnchor(at worldPosition: SIMD3<Float>) {
         arView.session.getGeoLocation(forPoint: worldPosition) { (location, altitude, error) in
             if let error = error {
@@ -166,6 +174,9 @@ extension ViewController: GPXParserDelegate {
 
 extension ViewController: ARSessionDelegate {
     
+    func addGeoAnchors(location: CLLocationCoordinate2D) {
+        // add geo anchors for all food locations in user's location radius
+    }
 }
 
 extension ViewController {
@@ -239,5 +250,11 @@ extension ViewController: ARCoachingOverlayViewDelegate {
 }
 
 extension ViewController: CLLocationManagerDelegate {
-    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        // track user's current location 
+        guard let location = locations.last else { return }
+        let locationCoordinates = location.coordinate
+        trackingLbl.text = "lat: \(locationCoordinates.latitude), lon: \(locationCoordinates.longitude)"
+    }
 }
